@@ -15,6 +15,7 @@
 		781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56592ADC00A600A56C4A /* BoardList.swift */; };
 		781D565C2ADC01B100A56C4A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565B2ADC01B100A56C4A /* Board.swift */; };
 		781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565E2ADC061000A56C4A /* Utils+Helpers.swift */; };
+		781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56612ADC0D5900A56C4A /* Board+Stub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		781D56592ADC00A600A56C4A /* BoardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardList.swift; sourceTree = "<group>"; };
 		781D565B2ADC01B100A56C4A /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		781D565E2ADC061000A56C4A /* Utils+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Helpers.swift"; sourceTree = "<group>"; };
+		781D56602ADC0CDF00A56C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		781D56612ADC0D5900A56C4A /* Board+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Stub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		781D56472ADBFED200A56C4A /* iRullo */ = {
 			isa = PBXGroup;
 			children = (
+				781D56602ADC0CDF00A56C4A /* Info.plist */,
 				781D565D2ADC05FB00A56C4A /* Utils+Helpers */,
 				781D56562ADBFF3A00A56C4A /* Models */,
 				781D56482ADBFED200A56C4A /* iRulloApp.swift */,
@@ -83,6 +87,7 @@
 				781D56572ADBFF5A00A56C4A /* Card.swift */,
 				781D56592ADC00A600A56C4A /* BoardList.swift */,
 				781D565B2ADC01B100A56C4A /* Board.swift */,
+				781D56612ADC0D5900A56C4A /* Board+Stub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				781D56582ADBFF5A00A56C4A /* Card.swift in Sources */,
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
+				781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */,
 				781D56492ADBFED200A56C4A /* iRulloApp.swift in Sources */,
 				781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */,
 			);
@@ -307,6 +313,7 @@
 				DEVELOPMENT_TEAM = 2C7W4RF846;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iRullo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +343,7 @@
 				DEVELOPMENT_TEAM = 2C7W4RF846;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iRullo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
