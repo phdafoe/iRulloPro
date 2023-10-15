@@ -10,5 +10,6 @@ import Foundation
 struct Constants {
     
     static let bundleId = "com.icologic.iRullo"
-    static let typeIdentifier = ".Card"
+    static let typeIdentifierCard = ".Card"
+    static let typeIdentifierBoardList = ".BoardList"
 }

@@ -42,7 +42,7 @@ class Card: NSObject, ObservableObject, Identifiable, Codable {
 
 extension Card: NSItemProviderWriting {
     
-    static let typeIdentifier = Constants.bundleId+Constants.typeIdentifier
+    static let typeIdentifier = Constants.bundleId+Constants.typeIdentifierCard
     
     static var writableTypeIdentifiersForItemProvider: [String] {
         [typeIdentifier]
@@ -58,5 +58,18 @@ extension Card: NSItemProviderWriting {
             completionHandler(nil, error)
         }
         return nil
+    }
+}
+
+extension Card: NSItemProviderReading {
+    
+    static var readableTypeIdentifiersForItemProvider: [String] {
+        [typeIdentifier]
+    }
+    
+    static func object(withItemProviderData data: Data, 
+                       typeIdentifier: String) throws -> Self {
+        
+        try JSONDecoder().decode(Self.self, from: data)
     }
 }
