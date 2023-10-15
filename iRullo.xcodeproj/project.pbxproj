@@ -14,6 +14,7 @@
 		781D56582ADBFF5A00A56C4A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56572ADBFF5A00A56C4A /* Card.swift */; };
 		781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56592ADC00A600A56C4A /* BoardList.swift */; };
 		781D565C2ADC01B100A56C4A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565B2ADC01B100A56C4A /* Board.swift */; };
+		781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565E2ADC061000A56C4A /* Utils+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		781D56572ADBFF5A00A56C4A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		781D56592ADC00A600A56C4A /* BoardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardList.swift; sourceTree = "<group>"; };
 		781D565B2ADC01B100A56C4A /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		781D565E2ADC061000A56C4A /* Utils+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		781D56472ADBFED200A56C4A /* iRullo */ = {
 			isa = PBXGroup;
 			children = (
+				781D565D2ADC05FB00A56C4A /* Utils+Helpers */,
 				781D56562ADBFF3A00A56C4A /* Models */,
 				781D56482ADBFED200A56C4A /* iRulloApp.swift */,
 				781D564A2ADBFED200A56C4A /* ContentView.swift */,
@@ -82,6 +85,14 @@
 				781D565B2ADC01B100A56C4A /* Board.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		781D565D2ADC05FB00A56C4A /* Utils+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				781D565E2ADC061000A56C4A /* Utils+Helpers.swift */,
+			);
+			path = "Utils+Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
 				781D56492ADBFED200A56C4A /* iRulloApp.swift in Sources */,
+				781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.icologic.iRullo.iRullo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icologic.iRullo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -334,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.icologic.iRullo.iRullo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icologic.iRullo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

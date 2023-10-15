@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card: ObservableObject, Identifiable, Codable {
+class Card: NSObject, ObservableObject, Identifiable, Codable {
     
     private(set) var id = UUID()
     var boardListId: UUID
@@ -21,6 +21,7 @@ class Card: ObservableObject, Identifiable, Codable {
     init(boardListId: UUID, content: String) {
         self.boardListId = boardListId
         self.content = content
+        super.init()
     }
     
     required init(from decoder: Decoder) throws {
@@ -28,6 +29,7 @@ class Card: ObservableObject, Identifiable, Codable {
         self.id = try container.decode(UUID.self, forKey: .id)
         self.boardListId = try container.decode(UUID.self, forKey: .boardListId)
         self.content = try container.decode(String.self, forKey: .content)
+        super.init()
     }
     
     func encode(to encoder: Encoder) throws {
@@ -35,5 +37,26 @@ class Card: ObservableObject, Identifiable, Codable {
         try container.encode(id, forKey: .id)
         try container.encode(boardListId, forKey: .boardListId)
         try container.encode(content, forKey: .content)
+    }
+}
+
+extension Card: NSItemProviderWriting {
+    
+    static let typeIdentifier = Constants.bundleId+Constants.typeIdentifier
+    
+    static var writableTypeIdentifiersForItemProvider: [String] {
+        [typeIdentifier]
+    }
+    
+    func loadData(withTypeIdentifier typeIdentifier: String, 
+                  forItemProviderCompletionHandler completionHandler: @escaping (Data?, Error?) -> Void) -> Progress? {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            completionHandler(try encoder.encode(self), nil)
+        } catch {
+            completionHandler(nil, error)
+        }
+        return nil
     }
 }
