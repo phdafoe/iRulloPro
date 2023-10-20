@@ -11,6 +11,7 @@ extension Board {
     
     static var stub: Board {
         let board = Board(name: "iRullo")
+        
         let backlogBoardList = BoardList(boardId: board.id, name: "Backlog")
         let backlogCards = [
             "Cloud Service",
@@ -60,6 +61,5 @@ extension Board {
         ]
         
         return board
-        
     }
 }

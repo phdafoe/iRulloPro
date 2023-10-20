@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		781D56492ADBFED200A56C4A /* iRulloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56482ADBFED200A56C4A /* iRulloApp.swift */; };
-		781D564B2ADBFED200A56C4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D564A2ADBFED200A56C4A /* ContentView.swift */; };
 		781D564D2ADBFED300A56C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781D564C2ADBFED300A56C4A /* Assets.xcassets */; };
 		781D56502ADBFED300A56C4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781D564F2ADBFED300A56C4A /* Preview Assets.xcassets */; };
 		781D56582ADBFF5A00A56C4A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56572ADBFF5A00A56C4A /* Card.swift */; };
@@ -16,12 +15,14 @@
 		781D565C2ADC01B100A56C4A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565B2ADC01B100A56C4A /* Board.swift */; };
 		781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565E2ADC061000A56C4A /* Utils+Helpers.swift */; };
 		781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56612ADC0D5900A56C4A /* Board+Stub.swift */; };
+		788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */; };
+		788D6D802AE2F91E0049D0F5 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */; };
+		788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D812AE2FE830049D0F5 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		781D56452ADBFED200A56C4A /* iRullo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRullo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		781D56482ADBFED200A56C4A /* iRulloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRulloApp.swift; sourceTree = "<group>"; };
-		781D564A2ADBFED200A56C4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		781D564C2ADBFED300A56C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		781D564F2ADBFED300A56C4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		781D56572ADBFF5A00A56C4A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -30,6 +31,9 @@
 		781D565E2ADC061000A56C4A /* Utils+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Helpers.swift"; sourceTree = "<group>"; };
 		781D56602ADC0CDF00A56C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		781D56612ADC0D5900A56C4A /* Board+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Stub.swift"; sourceTree = "<group>"; };
+		788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
+		788D6D812AE2FE830049D0F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +66,11 @@
 		781D56472ADBFED200A56C4A /* iRullo */ = {
 			isa = PBXGroup;
 			children = (
+				788D6D7C2AE2F3A20049D0F5 /* Views */,
 				781D56602ADC0CDF00A56C4A /* Info.plist */,
 				781D565D2ADC05FB00A56C4A /* Utils+Helpers */,
 				781D56562ADBFF3A00A56C4A /* Models */,
 				781D56482ADBFED200A56C4A /* iRulloApp.swift */,
-				781D564A2ADBFED200A56C4A /* ContentView.swift */,
 				781D564C2ADBFED300A56C4A /* Assets.xcassets */,
 				781D564E2ADBFED300A56C4A /* Preview Content */,
 			);
@@ -98,6 +102,16 @@
 				781D565E2ADC061000A56C4A /* Utils+Helpers.swift */,
 			);
 			path = "Utils+Helpers";
+			sourceTree = "<group>";
+		};
+		788D6D7C2AE2F3A20049D0F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */,
+				788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */,
+				788D6D812AE2FE830049D0F5 /* CardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,11 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				781D564B2ADBFED200A56C4A /* ContentView.swift in Sources */,
 				781D56582ADBFF5A00A56C4A /* Card.swift in Sources */,
+				788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */,
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
 				781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */,
+				788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */,
+				788D6D802AE2F91E0049D0F5 /* BoardListView.swift in Sources */,
 				781D56492ADBFED200A56C4A /* iRulloApp.swift in Sources */,
 				781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */,
 			);
