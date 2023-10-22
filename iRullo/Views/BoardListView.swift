@@ -67,6 +67,7 @@ struct BoardListView: View {
                         NSItemProvider(object: card)
                     }
             }
+            .onInsert(of: [Card.typeIdentifier], perform: handleOnInsertCard)
             .onMove(perform: boardList.moveCards(fromOffsets:toOffset:))
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: 4,
@@ -74,6 +75,19 @@ struct BoardListView: View {
                                  bottom: 4,
                                  trailing: 8))
             .listRowBackground(Color.clear)
+        }
+    }
+    
+    private func handleOnInsertCard(index: Int, itemProviders: [NSItemProvider]) {
+        for itemProvider in itemProviders {
+            itemProvider.loadObject(ofClass: Card.self) { item, _ in
+                guard let card = item as? Card else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    board.moveCard(card: card, to: boardList, at: index)
+                }
+            }
         }
     }
     
