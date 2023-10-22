@@ -17,10 +17,11 @@ struct BoardView: View {
                 LazyHStack(alignment: .top, spacing: 24, content: {
                     ForEach(board.lists) { boardList in
                         BoardListView(board: board, boardList: boardList)
+                            .onDrop(of: [Card.typeIdentifier], delegate: BoardDropDelegate(board: board, boardlist: boardList))
                     }
                     
                     Button(action: {
-                        
+                        handleOnAddList()
                     }, label: {
                         Text("+ Add")
                     })
@@ -40,6 +41,15 @@ struct BoardView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
+    }
+    
+    private func handleOnAddList() {
+        presentAlertTextField(title: "Add List") { title in
+            guard let titleUnw = title, !titleUnw.isEmpty else {
+                return
+            }
+            board.addNewBoardListWithName(nameBoard: titleUnw)
+        }
     }
 }
 

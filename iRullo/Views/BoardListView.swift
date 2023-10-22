@@ -45,11 +45,11 @@ struct BoardListView: View {
             Spacer()
             Menu {
                 Button("Rename"){
-                    
+                    handleBoardListRename()
                 }
                 
                 Button("Delete", role: .destructive){
-                    
+                    board.removeBoardList(boardList: boardList)
                 }
             } label: {
                 Image(systemName: "ellipsis.circle").imageScale(.large)
@@ -88,6 +88,15 @@ struct BoardListView: View {
                     board.moveCard(card: card, to: boardList, at: index)
                 }
             }
+        }
+    }
+    
+    private func handleBoardListRename() {
+        presentAlertTextField(title: "Rename list", defaultTextFieldText: boardList.name) { title in
+            guard let titleUnw = title, !titleUnw.isEmpty else {
+                return
+            }
+            boardList.name = titleUnw
         }
     }
     
