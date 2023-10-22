@@ -6,25 +6,35 @@
 //
 
 import SwiftUI
+import SwiftUIIntrospect
 
 struct BoardListView: View {
     
     @ObservedObject var board: Board
     @StateObject var boardList: BoardList
     
+    @State var listHeight: CGFloat = 0
+    @State var presentAlertTextField = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16){
             headerView
-            listView.listStyle(.plain)
+            listView
+                .listStyle(.plain)
             
             Button("+ Add"){
-                
+                presentAlertTextField.toggle()
             }
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .center)
+            .sheet(isPresented: $presentAlertTextField, content: {
+                ViewDetailCard(boardList: boardList, confirmAction: { text in
+                    handlerAddCard(text: text ?? "")
+                })
+            })
         }
         .padding(.vertical)
-        .background(Constants.Backgroud.boardListBackgroundColor)
+        .background(Constants.Backgroud.boardListBackgroundColor).opacity(0.8)
         .frame(width: 300)
         .cornerRadius(8)
         .foregroundColor(.black)
@@ -43,7 +53,7 @@ struct BoardListView: View {
                     
                 }
             } label: {
-                Image(systemName: "allipsis.circle").imageScale(.large)
+                Image(systemName: "ellipsis.circle").imageScale(.large)
             }
 
         })
@@ -62,6 +72,10 @@ struct BoardListView: View {
                                  trailing: 8))
             .listRowBackground(Color.clear)
         }
+    }
+    
+    private func handlerAddCard(text: String) {
+        boardList.addNewCardWithContent(content: text)
     }
 }
 

@@ -33,8 +33,11 @@ struct BoardView: View {
                 })
                 .padding()
             }
-            .background(Constants.Backgroud.iRulloBackgroundColor)
-//            .background(Image("macos").resizable().edgesIgnoringSafeArea(.bottom)).navigationTitle(board.name).navigationBarTitleDisplayMode(.inline)
+            .background(Image("macos")
+                .resizable()
+                .edgesIgnoringSafeArea(.bottom))
+            .navigationTitle(board.name)
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
     }

@@ -19,3 +19,21 @@ struct Constants {
         static let iRulloBackgroundColor = Color(uiColor: UIColor(red: 0.2, green: 0.47, blue: 0.73, alpha: 1))
     }
 }
+
+struct PrimaryButtonStyle: ButtonStyle{
+    var fillColor: Color = Constants.Backgroud.iRulloBackgroundColor
+    func makeBody(configuration: Configuration) -> some View {
+        return PrimaryButton(configuration: configuration, fillColor: fillColor)
+    }
+    
+    struct PrimaryButton: View {
+        let configuration: Configuration
+        let fillColor: Color
+        var body: some View {
+            return configuration.label
+                .padding(20)
+                .background(RoundedRectangle(cornerRadius: 10).fill(fillColor))
+                .foregroundColor(.white)            
+        }
+    }
+}

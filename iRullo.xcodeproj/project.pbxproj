@@ -18,6 +18,11 @@
 		788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */; };
 		788D6D802AE2F91E0049D0F5 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */; };
 		788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D812AE2FE830049D0F5 /* CardView.swift */; };
+		788D6D852AE433C00049D0F5 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D842AE433C00049D0F5 /* SwiftUIIntrospect */; };
+		788D6D872AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D862AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic */; };
+		788D6D892AE433C00049D0F5 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D882AE433C00049D0F5 /* SwiftUIIntrospect-Static */; };
+		788D6D8D2AE43E020049D0F5 /* View+AlertTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */; };
+		788D6D8F2AE45F320049D0F5 /* ViewDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,8 @@
 		788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		788D6D812AE2FE830049D0F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertTextField.swift"; sourceTree = "<group>"; };
+		788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788D6D852AE433C00049D0F5 /* SwiftUIIntrospect in Frameworks */,
+				788D6D872AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic in Frameworks */,
+				788D6D892AE433C00049D0F5 /* SwiftUIIntrospect-Static in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +120,8 @@
 				788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */,
 				788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */,
 				788D6D812AE2FE830049D0F5 /* CardView.swift */,
+				788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */,
+				788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +142,11 @@
 			dependencies = (
 			);
 			name = iRullo;
+			packageProductDependencies = (
+				788D6D842AE433C00049D0F5 /* SwiftUIIntrospect */,
+				788D6D862AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic */,
+				788D6D882AE433C00049D0F5 /* SwiftUIIntrospect-Static */,
+			);
 			productName = iRullo;
 			productReference = 781D56452ADBFED200A56C4A /* iRullo.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 781D563C2ADBFED200A56C4A;
+			packageReferences = (
+				788D6D832AE433C00049D0F5 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
+			);
 			productRefGroup = 781D56462ADBFED200A56C4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,6 +207,8 @@
 				781D56582ADBFF5A00A56C4A /* Card.swift in Sources */,
 				788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */,
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
+				788D6D8F2AE45F320049D0F5 /* ViewDetailCard.swift in Sources */,
+				788D6D8D2AE43E020049D0F5 /* View+AlertTextField.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
 				781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */,
 				788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */,
@@ -330,11 +352,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iRullo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,11 +384,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iRullo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +426,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		788D6D832AE433C00049D0F5 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		788D6D842AE433C00049D0F5 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 788D6D832AE433C00049D0F5 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+		788D6D862AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 788D6D832AE433C00049D0F5 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Dynamic";
+		};
+		788D6D882AE433C00049D0F5 /* SwiftUIIntrospect-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 788D6D832AE433C00049D0F5 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Static";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 781D563D2ADBFED200A56C4A /* Project object */;
 }
