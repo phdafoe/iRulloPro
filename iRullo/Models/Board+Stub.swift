@@ -22,7 +22,9 @@ extension Board {
             "Scheme design",
             "Analytics"
         ].map {
-            Card(boardListId: backlogBoardList.id, content: $0)
+            Card(boardListId: backlogBoardList.id, 
+                 title: $0,
+                 taskDescription: $0)
         }
         
         backlogBoardList.cards = backlogCards
@@ -33,7 +35,9 @@ extension Board {
             "Scheme design",
             "Analytics"
         ].map {
-            Card(boardListId: todoBacklogList.id, content: $0)
+            Card(boardListId: todoBacklogList.id, 
+                 title: $0,
+                 taskDescription: $0)
         }
         
         todoBacklogList.cards = todoBacklogCards
@@ -44,7 +48,9 @@ extension Board {
             "Scheme design UX - UI",
             "Analytics App on Firebase"
         ].map {
-            Card(boardListId: inProgressList.id, content: $0)
+            Card(boardListId: inProgressList.id,
+                 title: $0,
+                 taskDescription: $0)
         }
         
         inProgressList.cards = inProgressCards

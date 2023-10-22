@@ -21,23 +21,22 @@ struct BoardListView: View {
             headerView
             listView
                 .listStyle(.plain)
-            
             Button("+ Add"){
                 presentAlertTextField.toggle()
             }
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .center)
-            .sheet(isPresented: $presentAlertTextField, content: {
-                ViewDetailCard(boardList: boardList, confirmAction: { text in
-                    handlerAddCard(text: text ?? "")
-                })
-            })
         }
         .padding(.vertical)
         .background(Constants.Backgroud.boardListBackgroundColor).opacity(0.8)
         .frame(width: 300)
         .cornerRadius(8)
         .foregroundColor(.black)
+        .sheet(isPresented: $presentAlertTextField, content: {
+            ViewDetailCard(boardList: boardList, confirmAction: { title, taskDescription  in
+                handlerAddCard(title: title ?? "", taskDescription: taskDescription)
+            })
+        })
     }
     
     private var headerView: some View {
@@ -64,7 +63,11 @@ struct BoardListView: View {
         List{
             ForEach(boardList.cards) { card in
                 CardView(boardList: boardList, card: card)
+                    .onDrag{
+                        NSItemProvider(object: card)
+                    }
             }
+            .onMove(perform: boardList.moveCards(fromOffsets:toOffset:))
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: 4,
                                  leading: 8,
@@ -74,8 +77,8 @@ struct BoardListView: View {
         }
     }
     
-    private func handlerAddCard(text: String) {
-        boardList.addNewCardWithContent(content: text)
+    private func handlerAddCard(title: String, taskDescription: String? = nil) {
+        boardList.addNewCardWithContent(title: title, taskDescription: taskDescription)
     }
 }
 

@@ -12,13 +12,15 @@ struct CardView: View {
     @ObservedObject var boardList: BoardList
     @StateObject var card: Card
     
+    @State var presentAlertTextField = false
+    
     var body: some View {
         HStack{
-            Text(card.content).lineLimit(3)
+            Text(card.title).lineLimit(3)
             Spacer()
             Menu{
                 Button("Edit"){
-                    handleEditCard()
+                    presentAlertTextField.toggle()
                 }
                 Button("Delete", role: .destructive){
                     boardList.removeCard(card: card)
@@ -26,6 +28,14 @@ struct CardView: View {
             }label: {
                 Image(systemName: "ellipsis.rectangle").imageScale(.small)
             }
+            .sheet(isPresented: $presentAlertTextField, content: {
+                ViewDetailCard(boardList: boardList,
+                               tapNewName: card.title,
+                               tapNewDescription: card.taskDescription,
+                               confirmAction: { title, taskDescription  in
+                    handleEditCard(title: title ?? "", taskDescription: taskDescription ?? "")
+                })
+            })
         }
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -35,13 +45,9 @@ struct CardView: View {
         
     }
     
-    private func handleEditCard() {
-        presentAlertTextField(title: "Edit Card", defaultTextFieldText: card.content) { text in
-            guard let text = text, !text.isEmpty else {
-                return
-            }
-            card.content = text
-        }
+    private func handleEditCard(title: String, taskDescription: String ) {
+        card.title = title
+        card.taskDescription = taskDescription
     }
 }
 

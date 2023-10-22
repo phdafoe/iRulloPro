@@ -12,15 +12,17 @@ class Card: NSObject, ObservableObject, Identifiable, Codable {
     private(set) var id = UUID()
     var boardListId: UUID
     
-    @Published var content: String
+    @Published var title: String
+    @Published var taskDescription: String
     
     enum CodingKeys: String, CodingKey {
-        case id, boardListId, content
+        case id, boardListId, title, taskDescription
     }
     
-    init(boardListId: UUID, content: String) {
+    init(boardListId: UUID, title: String, taskDescription: String) {
         self.boardListId = boardListId
-        self.content = content
+        self.title = title
+        self.taskDescription = taskDescription
         super.init()
     }
     
@@ -28,7 +30,8 @@ class Card: NSObject, ObservableObject, Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(UUID.self, forKey: .id)
         self.boardListId = try container.decode(UUID.self, forKey: .boardListId)
-        self.content = try container.decode(String.self, forKey: .content)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.taskDescription = try container.decode(String.self, forKey: .taskDescription)
         super.init()
     }
     
@@ -36,7 +39,8 @@ class Card: NSObject, ObservableObject, Identifiable, Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(boardListId, forKey: .boardListId)
-        try container.encode(content, forKey: .content)
+        try container.encode(title, forKey: .title)
+        try container.encode(taskDescription, forKey: .taskDescription)
     }
 }
 

@@ -21,7 +21,6 @@
 		788D6D852AE433C00049D0F5 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D842AE433C00049D0F5 /* SwiftUIIntrospect */; };
 		788D6D872AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D862AE433C00049D0F5 /* SwiftUIIntrospect-Dynamic */; };
 		788D6D892AE433C00049D0F5 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 788D6D882AE433C00049D0F5 /* SwiftUIIntrospect-Static */; };
-		788D6D8D2AE43E020049D0F5 /* View+AlertTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */; };
 		788D6D8F2AE45F320049D0F5 /* ViewDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		788D6D812AE2FE830049D0F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertTextField.swift"; sourceTree = "<group>"; };
 		788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 				788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */,
 				788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */,
 				788D6D812AE2FE830049D0F5 /* CardView.swift */,
-				788D6D8C2AE43E020049D0F5 /* View+AlertTextField.swift */,
 				788D6D8E2AE45F320049D0F5 /* ViewDetailCard.swift */,
 			);
 			path = Views;
@@ -208,7 +205,6 @@
 				788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */,
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
 				788D6D8F2AE45F320049D0F5 /* ViewDetailCard.swift in Sources */,
-				788D6D8D2AE43E020049D0F5 /* View+AlertTextField.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
 				781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */,
 				788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */,

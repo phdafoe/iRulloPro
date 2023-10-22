@@ -11,24 +11,24 @@ struct ViewDetailCard: View {
     
     @ObservedObject var boardList: BoardList
     
-    @State private var tapNewName = ""
-    @State private var tapNewDescription = ""
+    @State var tapNewName: String = ""
+    @State var tapNewDescription: String = ""
     @State private var startDateNewTask = Date()
     @State private var finishDateNewTask = Date()
     
-    var confirmAction: (String?) -> ()
+    var confirmAction: (String?, String?) -> ()
     @SwiftUI.Environment(\.presentationMode) var presenterMode
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    Section(header: Text("New Task"), footer: Text("Add a description task for any board list")) {
+                    Section(header: Text("New Task")) {
                         TextField("Tap to add name", text: $tapNewName)
                         TextEditor(text: $tapNewDescription)
                     }
                     
-                    Section(header: Text("Parameters"), footer: Text("Add a start or finish date task for any board list")) {
+                    Section(header: Text("Parameters")) {
                         DatePicker(selection: $startDateNewTask,
                                    in: Date.now...,
                                    displayedComponents: .date) {
@@ -54,14 +54,12 @@ struct ViewDetailCard: View {
                 HStack(spacing: 16){
                     Button("Save"){
                         print("saved")
-                        confirmAction(tapNewName)
+                        confirmAction(tapNewName, tapNewDescription)
                         self.presenterMode.wrappedValue.dismiss()
                     }
                     Button("Cancel", role: .cancel){
                         print("canceled")
-                    }
-                    Button("Delete", role: .destructive){
-                        print("deleted")
+                        self.presenterMode.wrappedValue.dismiss()
                     }
                 }
                 .buttonStyle(PrimaryButtonStyle())
