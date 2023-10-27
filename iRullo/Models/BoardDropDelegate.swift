@@ -13,13 +13,34 @@ struct BoardDropDelegate: DropDelegate {
     let board: Board
     let boardlist: BoardList
     
+    @Binding var lists: [BoardList]
+    @Binding var current: BoardList?
+    
+    private func boardListItemProviders(info: DropInfo) -> [NSItemProvider] {
+        info.itemProviders(for: [BoardList.typeIdentifier])
+    }
+    
     private func cardItemProviders(info: DropInfo) -> [NSItemProvider] {
         info.itemProviders(for: [Card.typeIdentifier])
+    }
+    
+    func dropEntered(info: DropInfo) {
+        guard
+            !boardListItemProviders(info: info).isEmpty,
+            let currentUnw = current,
+            boardlist != currentUnw,
+            let fromIndex = lists.firstIndex(of: currentUnw),
+            let toIndex = lists.firstIndex(of: boardlist) else {
+            return
+        }
+        lists.move(fromOffsets: IndexSet(integer: fromIndex), toOffset: toIndex > fromIndex ? toIndex + 1: toIndex)
     }
     
     func dropUpdated(info: DropInfo) -> DropProposal? {
         if !cardItemProviders(info: info).isEmpty {
             return DropProposal(operation: .copy)
+        } else if !boardListItemProviders(info: info).isEmpty{
+            return DropProposal(operation: .move)
         }
         return nil
     }
@@ -38,6 +59,7 @@ struct BoardDropDelegate: DropDelegate {
                 }
             }
         }
+        self.current = nil
         return true
     }
 }

@@ -10,6 +10,11 @@ import SwiftUI
 struct BoardView: View {
     
     @StateObject private var board: Board = Board.stub
+    @State private var dragging: BoardList?
+    
+    let myArray = ["macos", "macos1", "macos2", "macos3", "macos4"]
+    @State var activeImageIndex = 0
+    let imageSwitchTimer = Timer.publish(every: 21600, on: .main, in: .common).autoconnect()
     
     var body: some View {
         NavigationView{
@@ -17,7 +22,14 @@ struct BoardView: View {
                 LazyHStack(alignment: .top, spacing: 24, content: {
                     ForEach(board.lists) { boardList in
                         BoardListView(board: board, boardList: boardList)
-                            .onDrop(of: [Card.typeIdentifier], delegate: BoardDropDelegate(board: board, boardlist: boardList))
+                            .onDrag({
+                                self.dragging = boardList
+                                return NSItemProvider(object: boardList)
+                            })
+                            .onDrop(of: [Card.typeIdentifier, BoardList.typeIdentifier], delegate: BoardDropDelegate(board: board,
+                                                                                           boardlist: boardList,
+                                                                                           lists:$board.lists,
+                                                                                           current: $dragging))
                     }
                     
                     Button(action: {
@@ -33,12 +45,16 @@ struct BoardView: View {
                     .foregroundColor(.black)
                 })
                 .padding()
+                .animation(.default, value: board.lists)
             }
-            .background(Image("macos")
+            .background(Image(myArray[activeImageIndex])
                 .resizable()
                 .edgesIgnoringSafeArea(.bottom))
             .navigationTitle(board.name)
             .navigationBarTitleDisplayMode(.inline)
+            .onReceive(imageSwitchTimer) { _ in
+                self.activeImageIndex = (self.activeImageIndex + 1) % self.myArray.count
+            }
         }
         .navigationViewStyle(.stack)
     }
@@ -51,6 +67,7 @@ struct BoardView: View {
             board.addNewBoardListWithName(nameBoard: titleUnw)
         }
     }
+
 }
 
 #Preview {
