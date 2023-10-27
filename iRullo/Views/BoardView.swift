@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BoardView: View {
     
-    @StateObject private var board: Board = Board.stub
+    @StateObject private var board: Board = BoardDiskRepository().loadFromDisk() ?? Board.stub
     @State private var dragging: BoardList?
     
     let myArray = ["macos", "macos1", "macos2", "macos3", "macos4"]
@@ -52,11 +52,19 @@ struct BoardView: View {
                 .edgesIgnoringSafeArea(.bottom))
             .navigationTitle(board.name)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                Button("Rename"){
+                    handleRenameBoard()
+                }
+            }
             .onReceive(imageSwitchTimer) { _ in
                 self.activeImageIndex = (self.activeImageIndex + 1) % self.myArray.count
             }
         }
         .navigationViewStyle(.stack)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            BoardDiskRepository().saveToDisk(board: board)
+        }
     }
     
     private func handleOnAddList() {
@@ -65,6 +73,15 @@ struct BoardView: View {
                 return
             }
             board.addNewBoardListWithName(nameBoard: titleUnw)
+        }
+    }
+    
+    private func handleRenameBoard() {
+        presentAlertTextField(title: "Rename Board", defaultTextFieldText: board.name) { text in
+            guard let titleUnw = text, !titleUnw.isEmpty else {
+                return
+            }
+            board.name = titleUnw
         }
     }
 

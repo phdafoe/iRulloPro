@@ -15,6 +15,7 @@
 		781D565C2ADC01B100A56C4A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565B2ADC01B100A56C4A /* Board.swift */; };
 		781D565F2ADC061000A56C4A /* Utils+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D565E2ADC061000A56C4A /* Utils+Helpers.swift */; };
 		781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D56612ADC0D5900A56C4A /* Board+Stub.swift */; };
+		7829D7EF2AEC169B00452C3A /* BoardDiskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D7EE2AEC169B00452C3A /* BoardDiskRepository.swift */; };
 		788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */; };
 		788D6D802AE2F91E0049D0F5 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */; };
 		788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D812AE2FE830049D0F5 /* CardView.swift */; };
@@ -37,6 +38,7 @@
 		781D565E2ADC061000A56C4A /* Utils+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Helpers.swift"; sourceTree = "<group>"; };
 		781D56602ADC0CDF00A56C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		781D56612ADC0D5900A56C4A /* Board+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Stub.swift"; sourceTree = "<group>"; };
+		7829D7EE2AEC169B00452C3A /* BoardDiskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDiskRepository.swift; sourceTree = "<group>"; };
 		788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		788D6D812AE2FE830049D0F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				781D565B2ADC01B100A56C4A /* Board.swift */,
 				781D56612ADC0D5900A56C4A /* Board+Stub.swift */,
 				788D6D902AE56A000049D0F5 /* BoardDropDelegate.swift */,
+				7829D7EE2AEC169B00452C3A /* BoardDiskRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				781D56582ADBFF5A00A56C4A /* Card.swift in Sources */,
 				788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */,
 				781D565C2ADC01B100A56C4A /* Board.swift in Sources */,
+				7829D7EF2AEC169B00452C3A /* BoardDiskRepository.swift in Sources */,
 				788D6D8F2AE45F320049D0F5 /* ViewDetailCard.swift in Sources */,
 				781D565A2ADC00A600A56C4A /* BoardList.swift in Sources */,
 				781D56622ADC0D5900A56C4A /* Board+Stub.swift in Sources */,
