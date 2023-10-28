@@ -14,6 +14,12 @@ struct Constants {
     static let typeIdentifierCard = ".Card"
     static let typeIdentifierBoardList = ".BoardList"
     
+    let kUsuario = "USUARIO"
+    let kContrasena = "CONTRASENA"
+    let kUsuarioLogado = "LOGADO"
+    let kPreferences = UserDefaults.standard
+    static let totalPages = 3
+    
     struct Backgroud {
         static let boardListBackgroundColor = Color(uiColor: UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1))
         static let iRulloBackgroundColor = Color(uiColor: UIColor(red: 0.2, green: 0.47, blue: 0.73, alpha: 1))

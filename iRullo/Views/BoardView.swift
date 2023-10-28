@@ -11,6 +11,7 @@ struct BoardView: View {
     
     @StateObject private var board: Board = BoardDiskRepository().loadFromDisk() ?? Board.stub
     @State private var dragging: BoardList?
+    @State private var presentProfile = false
     
     let myArray = ["macos", "macos1", "macos2", "macos3", "macos4"]
     @State var activeImageIndex = 0
@@ -49,12 +50,24 @@ struct BoardView: View {
             }
             .background(Image(myArray[activeImageIndex])
                 .resizable()
-                .edgesIgnoringSafeArea(.bottom))
+                .edgesIgnoringSafeArea([.bottom, .leading, .trailing]))
             .navigationTitle(board.name)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                Button("Rename"){
-                    handleRenameBoard()
+                HStack{
+                    Button(action: {
+                        handleRenameBoard()
+                    }, label: {
+                        Image(systemName: "ellipsis.circle").imageScale(.large)
+                    })
+                    Button(action: {
+                        loadProfile()
+                    }, label: {
+                        Image(systemName: "person.circle").imageScale(.large)
+                    })
+                    .sheet(isPresented: $presentProfile, content: {
+                        ViewProfile()
+                    })
                 }
             }
             .onReceive(imageSwitchTimer) { _ in
@@ -83,6 +96,10 @@ struct BoardView: View {
             }
             board.name = titleUnw
         }
+    }
+    
+    private func loadProfile() {
+        self.presentProfile.toggle()
     }
 
 }
