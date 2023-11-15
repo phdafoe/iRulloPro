@@ -3,4 +3,118 @@
    uuid = "B2D62E70-29F7-4E26-952F-7ABB9610A57E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5428CD7-963B-4B4A-81E2-5F5BCFBB27D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRullo/Views/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "autenticationEmailPulsado()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A0415E7-8731-462A-933F-3D0BA678ED91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRullo/Models/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "registro(email:password:passwordConfirmation:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3865E2FE-F169-4DC4-82FD-25D203F5282B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRullo/Models/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "manejadorFoinalizacionDelResultadoDeAutenticacion(with:and:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3865E2FE-F169-4DC4-82FD-25D203F5282B - 563bc368d8e84bdc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iRullo.LoginViewModel.manejadorFoinalizacionDelResultadoDeAutenticacion(with: Swift.Optional&lt;__C.FIRAuthDataResult&gt;, and: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "iRullo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h9143714/Documents/GITHUB/iRullo/iRullo/Models/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "3865E2FE-F169-4DC4-82FD-25D203F5282B - 14461a53b27ca923"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in iRullo.LoginViewModel.manejadorFoinalizacionDelResultadoDeAutenticacion(with: Swift.Optional&lt;__C.FIRAuthDataResult&gt;, and: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "iRullo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/h9143714/Documents/GITHUB/iRullo/iRullo/Models/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EB7C339-D3D8-42ED-AECC-8F4154758C20"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRullo/Models/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "manejadorFoinalizacionDelResultadoDeAutenticacion(with:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32359BF-4EA2-4A03-AAD4-D6294C18D391"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iRullo/Models/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "manejadorFoinalizacionDelResultadoDeAutenticacion(with:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

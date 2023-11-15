@@ -48,6 +48,7 @@ struct BoardListView: View {
                     handleBoardListRename()
                 }
                 
+                
                 Button("Delete", role: .destructive){
                     board.removeBoardList(boardList: boardList)
                 }

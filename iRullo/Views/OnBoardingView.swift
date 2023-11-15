@@ -15,22 +15,22 @@ struct OnBoardingView: View {
             if currentPage == 1 {
                 ScreenView(image: "rocket",
                            title: "Step 1",
-                           detail: "Welcome. to iCoSpartan App, can you create your table workouts. Explore now.",
-                           bgColor: Color.black)
+                           detail: "Welcome. to iRullo App, can you create your table Backlog, to do, and more. Explore now.",
+                           bgColor: Color.white)
                 .transition(.scale)
             }
             if currentPage == 2 {
                 ScreenView(image: "character-1",
                            title: "Step 2",
-                           detail: "We offer access to maintain your own custom personal workouts, track what you've seen and follow instructions customized with videos in Detail View.",
-                           bgColor: Color.black)
+                           detail: "We offer access to keep your personalized tasks in projects, track what you've completed and track your progress and upcoming tasks.",
+                           bgColor: Color.white)
                 .transition(.scale)
             }
             if currentPage == 3 {
                 ScreenView(image: "character-2",
                            title: "Step 3",
-                           detail: "see your table of challenges count your objectives and follow your progress.",
-                           bgColor: Color.black)
+                           detail: "See your table of challenges count your objectives and follow your progress.",
+                           bgColor: Color.white)
                 .transition(.scale)
             }
         }
@@ -50,12 +50,12 @@ struct OnBoardingView: View {
                     .font(.system(size: 10, weight: .semibold))
                     .foregroundColor(.red)
                     .frame(width: 20, height: 20)
-                    .background(Color.gray)
+                    .background(Color.black)
                     .clipShape(Circle())
                     .overlay(
                         ZStack{
                             Circle()
-                                .stroke(Color.black.opacity(0.2), lineWidth: 2)
+                                .stroke(Color.black, lineWidth: 2)
                             Circle()
                                 .trim(from: 0, to: CGFloat(currentPage) / CGFloat(Constants.totalPages))
                                 .stroke(Color.red, lineWidth: 3)
@@ -76,6 +76,7 @@ struct ScreenView: View {
     var bgColor: Color
     
     @AppStorage("currentPage") var currentPage = 1
+    @State private var animationAmount = 1.0
     
     var body: some View {
         VStack(spacing: 20) {
@@ -83,7 +84,7 @@ struct ScreenView: View {
             HStack{
                 // Se muestra si solo es la primera pagina
                 if currentPage == 1 {
-                    Text("Welcome to iTVShows")
+                    Text("Welcome to iRullo")
                         .font(.title)
                         .fontWeight(.semibold)
                         .kerning(1.4)
@@ -91,13 +92,14 @@ struct ScreenView: View {
                     Button(action: {
                         withAnimation(.easeInOut){
                             currentPage -= 1
+                            animationAmount += 1
                         }
                     }) {
                         Image(systemName: "chevron.left")
                             .foregroundColor(.red)
                             .padding(.vertical, 10)
                             .padding(.horizontal)
-                            .background(Color.black.opacity(0.2))
+                            .background(Color.black)
                             .clipShape(Circle())
                     }
                 }
@@ -123,6 +125,8 @@ struct ScreenView: View {
             Image(image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .scaleEffect(animationAmount/2)
+                .animation(.easeInOut(duration: 1), value: animationAmount)
             Text(title)
                 .font(.title)
                 .fontWeight(.bold)
@@ -138,6 +142,9 @@ struct ScreenView: View {
             
         }
         .background(bgColor.ignoresSafeArea())
+        .onAppear(perform: {
+            animationAmount += 1
+        })
     }
 }
 

@@ -51,6 +51,7 @@
 		7829D83D2AED626000452C3A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7829D83C2AED626000452C3A /* FirebaseStorage */; };
 		7829D83F2AED626000452C3A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7829D83E2AED626000452C3A /* FirebaseStorageCombine-Community */; };
 		7838C7A72AED6791009CC980 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838C7A62AED6791009CC980 /* OnBoardingView.swift */; };
+		7838C7A92AED707A009CC980 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838C7A82AED707A009CC980 /* CustomAlertView.swift */; };
 		7842CB5F2AED649300BA50DE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7842CB5E2AED649300BA50DE /* CustomTextField.swift */; };
 		788D6D7E2AE2F3B20049D0F5 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */; };
 		788D6D802AE2F91E0049D0F5 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */; };
@@ -83,6 +84,7 @@
 		7829D7FA2AED5BC200452C3A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7829D8072AED615900452C3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7838C7A62AED6791009CC980 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		7838C7A82AED707A009CC980 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		7842CB5E2AED649300BA50DE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		788D6D7D2AE2F3B20049D0F5 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		788D6D7F2AE2F91E0049D0F5 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				7842CB5E2AED649300BA50DE /* CustomTextField.swift */,
+				7838C7A82AED707A009CC980 /* CustomAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			files = (
 				781D56582ADBFF5A00A56C4A /* Card.swift in Sources */,
 				788D6D822AE2FE830049D0F5 /* CardView.swift in Sources */,
+				7838C7A92AED707A009CC980 /* CustomAlertView.swift in Sources */,
 				7829D7F72AED5B1500452C3A /* SplashView.swift in Sources */,
 				7829D7F92AED5B4200452C3A /* SplashViewModel.swift in Sources */,
 				7842CB5F2AED649300BA50DE /* CustomTextField.swift in Sources */,

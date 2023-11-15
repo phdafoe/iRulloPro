@@ -31,7 +31,11 @@ extension View {
             }
             confirmAction(textField.text)
         }))
-        rootVC.present(alertController, animated: true, completion: nil)
+
+        DispatchQueue.main.async {
+            rootVC.present(alertController, animated: false)
+        }
+        
         
     }
 }
